@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Booking Form HTML Template</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="row" style="height: 100px;">
+                <div class="col-md-4">
+                    <div class="booking-form">
+                        <form action="ffc_liste" method="get">
+                            <div class="form-btn">
+                                <button class="submit-btn">Get all FFCs</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-7 col-md-offset-1" style="margin-bottom: 25px;">
+                    <div class="booking-form">
+                        <form action="customer_liste" method="get">
+                            <div class="form-btn">
+                                <button class="submit-btn">Get all customers</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-7 col-md-offset-1" style="margin-bottom: 25px;">
+                    <div class="booking-form">
+                        <form action="get_customer" method="get">
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Passport_number</span>
+                                        <input name="passport" class="form-control" type="text"
+                                               placeholder="Passport_number">
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="form-btn">
+                                <button class="submit-btn">Get Customer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-7 col-md-offset-1" style="margin-bottom: 25px;">
+                    <div class="booking-form">
+                        <form action="update_customer" method="post">
+                            {% csrf_token %}
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Passport_number</span>
+                                        <input name="passport" class="form-control" type="text"
+                                               placeholder="Passport_number">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="form-label">Degisecek adres</span>
+                                        <input name="adres" class="form-control" type="text" placeholder="Yeni adres">
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="form-btn">
+                                <button class="submit-btn">Update Customer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-7 col-md-offset-1" style="margin-bottom: 25px;">
+                    <div class="booking-form">
+                        <form action="insert_customer" method="post">
+                            {% csrf_token %}
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Passport_number</span>
+                                        <input name="passport" class="form-control" type="text"
+                                               placeholder="Passport_number">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="form-label">name</span>
+                                        <input name="name" class="form-control" type="text"
+                                               placeholder="name">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="form-label">phone</span>
+                                        <input name="phone" class="form-control" type="text"
+                                               placeholder="phone">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="form-label">e_mail</span>
+                                        <input name="e_mail" class="form-control" type="text"
+                                               placeholder="e_mail">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="form-label">country</span>
+                                        <input name="country" class="form-control" type="text"
+                                               placeholder="country">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="form-label">adress</span>
+                                        <input name="adress" class="form-control" type="text"
+                                               placeholder="adress">
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="form-btn">
+                                <button class="submit-btn">Insert Customer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-7 col-md-offset-1" style="margin-bottom: 25px;">
+                    <div class="booking-form">
+                        <form action="delete_customer" method="post">
+                            {% csrf_token %}
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Passport_number</span>
+                                        <input name="passport" class="form-control" type="text"
+                                               placeholder="Passport_number">
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="form-btn">
+                                <button class="submit-btn">Delete Customer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-7 col-md-offset-1" style="margin-bottom: 25px;">
+                    <div class="booking-form">
+                        <form action="update_seat" method="post">
+                            {% csrf_token %}
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label">flight_number</span>
+                                        <input name="flight_number" class="form-control" type="text"
+                                               placeholder="flight_number">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label">leg_number</span>
+                                        <input name="leg_number" class="form-control" type="text"
+                                               placeholder="leg_number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label">date</span>
+                                        <input name="date" class="form-control" type="date">
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label">seat_number</span>
+                                        <input name="seat_number" class="form-control" type="text"
+                                               placeholder="seat_number">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label">passport_number</span>
+                                        <input name="passport_number" class="form-control" type="text">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="form-label">checked</span>
+                                        <input name="check" class="form-control" type="text" placeholder="Yes/No">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                                <div class="form-btn">
+                                    <button class="submit-btn">Insert Seat</button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
